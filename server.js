@@ -38,7 +38,7 @@ app.delete('/api/classrooms/:clasroom_id', classroomsController.destroy);
 
 
 //Comment Routes
-
+app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
 
 // server start
 let port = process.env.PORT || 3001;

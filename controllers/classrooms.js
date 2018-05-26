@@ -14,13 +14,13 @@ function index (req, res){
 }
 
 function create (req, res){
-    Classroom.create(reg.body, function(err, classrooms){
+    Classroom.create(reg.body, function(err, newClassroom){
       if (err) {
-        console.log(err);
+        console.log('New Classroom err: ', err);
         res.send(err);
       } else {
-        console.log('classrooms = ', classrooms);
-        res.json(classrooms);
+        console.log('classrooms = ', newClassroom);
+        res.json(newClassroom);
       }
     });
 }
@@ -31,7 +31,6 @@ function show(req, res) {
         console.log(err);
         res.send(err);
       } else {
-        console.log('classrooms = ', classrooms);
         res.json(classrooms);
       }
     });
@@ -47,7 +46,7 @@ function update(req, res) {
           foundClassroom.teacher = req.body.teacher;
           foundClassroom.info = req.body.info;
           foundClassroom.image_url = req.body.image_url;
-          foundClassroom.comment = req.body.comment;
+          foundClassroom.comments = req.body.comments;
     
           foundClassroom.save();
           res.json(foundClassroom)
