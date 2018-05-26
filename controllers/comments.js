@@ -8,7 +8,8 @@ function index(req, res) {
             console.log('found err = ', err);
             res.send(err);
         } else {
-            var comments = classroom.comments
+            var comments = classroom.comments;
+            console.log('All comments: ', comments);
             res.json(comments);
         }
     });

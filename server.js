@@ -1,10 +1,11 @@
 //requirements
 require('dotenv').config();
-const express = require('express');
-const app = express();
 
-var classroomsController = require('./controllers/classrooms');
-var commentsController = require('./controllers/comments');
+var express = require('express');
+var app = express();
+
+var classroomsController = require('./controllers/classrooms.js');
+var commentsController = require('./controllers/comments.js');
 
 
 
@@ -17,7 +18,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
+// app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //routes
@@ -38,7 +40,12 @@ app.delete('/api/classrooms/:clasroom_id', classroomsController.destroy);
 
 
 //Comment Routes
-app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
+app.post('/api/classrooms/:classroom_id/comments', commentsController.create);
+// app.get('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.show);
+// app.put('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.update);
+// app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
+// app.delete('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.destroy);
+
 
 // server start
 let port = process.env.PORT || 3001;

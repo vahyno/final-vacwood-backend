@@ -19,7 +19,7 @@ function create (req, res){
         console.log('New Classroom err: ', err);
         res.send(err);
       } else {
-        console.log('classrooms = ', newClassroom);
+        console.log('New Classroom = ', newClassroom);
         res.json(newClassroom);
       }
     });
@@ -28,7 +28,7 @@ function create (req, res){
 function show(req, res) {
     Classroom.findById(req.params.classroom_id, function(err, classroom) {
       if (err) {
-        console.log(err);
+        console.log('classroom show err: ',err);
         res.send(err);
       } else {
         res.json(classrooms);
@@ -39,7 +39,7 @@ function show(req, res) {
 function update(req, res) {
     Classroom.findById(req.params.recipe_id, function(err, foundClassroom) {
         if (err) {
-            console.log(err);
+            console.log("foundClassroom err: ", err);
             res.send(err);
         } else {
           foundClassroom.title = req.body.title;
@@ -60,8 +60,8 @@ function destroy(req, res){
         console.log('deletedClassroom err: ', err);
         res.send(err);
       } else {
-        res.send('Classroom Deleted');
         console.log('Classroom Deleted');
+        res.send('Classroom Deleted');
       }
     });
 }
