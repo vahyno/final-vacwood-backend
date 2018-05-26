@@ -37,7 +37,15 @@ function create(req, res){
 }
 
 function show(req, res){
-    
+    Comment.findById(req.params.comment_id, function(err, comment){
+        if (err) {
+            console.log('comment err: ', err);
+            res.send(err);
+        } else {
+            console.log('comment: ', comment);
+            res.json(comment);
+        }
+    });
 }
 
 function update(req, res){

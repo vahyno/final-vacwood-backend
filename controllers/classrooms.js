@@ -28,16 +28,16 @@ function create (req, res){
 function show(req, res) {
     Classroom.findById(req.params.classroom_id, function(err, classroom) {
       if (err) {
-        console.log('classroom show err: ',err);
+        console.log('classroom show err: ', err);
         res.send(err);
       } else {
-        res.json(classrooms);
+        res.json(classroom);
       }
     });
 }
   
 function update(req, res) {
-    Classroom.findById(req.params.recipe_id, function(err, foundClassroom) {
+    Classroom.findById(req.params.classroom_id, function(err, foundClassroom) {
         if (err) {
             console.log("foundClassroom err: ", err);
             res.send(err);
