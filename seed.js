@@ -17,13 +17,13 @@ var seedClassroom = [{
     teacher: 'Ms. Quivers',
     info: 'some info',
     image_url: `https://kindercraze.com/wp-content/uploads/2015/10/vintage-carnival-9.jpg`,
-    comments: [comments[2]],
+    comment: [comments[2]],
 },{
     title: 'Kindergarten classroom',
     teacher: 'Mr. Norris',
     info: 'some info',
     image_url: `http://4.bp.blogspot.com/_-FEgefSk_mQ/TFeSdEZeJfI/AAAAAAAAAZc/N6SY6VUQX4s/s400/IMG_9467.JPG`,
-    comments: [comments[1,0]],     
+    comment: [comments[1], comments[0]],     
 }
 ]
 

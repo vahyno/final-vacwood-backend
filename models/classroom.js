@@ -7,7 +7,7 @@ var ClassroomSchema = new Schema({
   teacher: String,
   info: String,
   image_url: String,
-  message: [Comment.schema]
+  comment: [Comment.schema]
 });
 
 var Classroom = mongoose.model('Classroom', ClassroomSchema);
