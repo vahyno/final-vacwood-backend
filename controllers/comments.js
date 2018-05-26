@@ -55,8 +55,8 @@ function update(req, res){
             res.send(err);
         } else {
             var commentToUpdate = classroom.comments.id(req.params.comment_id);
-            commentToUpdate.content = reg.body.content;
-            commentToUpdate.likes  = reg.body.likes;
+            commentToUpdate.content = req.body.content;
+            commentToUpdate.likes  = req.body.likes;
 
             classroom.save();
             res.json(commentToUpdate);

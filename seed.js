@@ -5,7 +5,7 @@ var comments = [{
   content: 'no school tomorrow',
   likes: 0,
 }, {
-  content: 'Going to OaklandZoo tomorrow anyone wants to join?',
+  content: 'Going to Oakland Zoo tomorrow anyone wants to join?',
   likes: 2,
 }, {
   content: 'Pack lunch, fieldtrip on Friday!!!',
