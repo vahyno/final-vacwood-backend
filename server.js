@@ -34,7 +34,8 @@ app.get('/', function(req, res){
 //Classrooms Routes
 app.get('/api/classrooms', classroomsController.index);
 app.post('/api/classrooms', classroomsController.create);
-app.get('/api/classrooms', classroomsController.show);
+// This route needs an id parameter. Show is a single resource route, so we need the id.
+app.get('/api/classrooms/:classroom_id', classroomsController.show);
 app.put('/api/classrooms/:classroom_id', classroomsController.update);
 app.delete('/api/classrooms/:clasroom_id', classroomsController.destroy);
 
