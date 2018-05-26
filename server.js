@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 
+var classroomsController = require('./controllers/classrooms');
+var commentsController = require('./controllers/comments');
 
 
 
@@ -27,6 +29,10 @@ app.get('/', function(req, res){
   })
 });
 
+//Classrooms Routes
+app.get('/api/classrooms', classroomsController.index);
+
+//Comment Routes
 
 
 // server start
