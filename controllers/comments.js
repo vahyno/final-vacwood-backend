@@ -45,7 +45,21 @@ function update(req, res){
 }
 
 function destroy(req, res){
-    
+    Comment.findOneAndRemove(req.params.comment_id, function(err, deletedComment){
+        if (err) {
+            console.log('deletedComment err: ', err);
+            res.send(err);
+        } else {
+            Classroom.findByIdAndUpdate(req.params.classroom_id, {$pull: {comments: {_id: req.params.comment_id}}}, function(err){
+                if (err) {
+                    console.log('deletedComment err: ', err);
+                    res.send(err);
+                } else {
+                    res.send('deletedComment - success')
+                }
+            });
+        }
+    });
 }
 
 
