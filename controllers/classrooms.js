@@ -7,7 +7,7 @@ function index (req, res){
         console.log(err);
         res.send(err);
       } else {
-        console.log('classrooms = ', classrooms);
+        // console.log('classrooms = ', classrooms);
         res.json(classrooms);
       }
     });

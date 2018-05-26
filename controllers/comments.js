@@ -49,7 +49,19 @@ function show(req, res){
 }
 
 function update(req, res){
-    
+    Classroom.findById(req.params.classroom_id, function(err, classroom){
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            var commentToUpdate = classroom.comments.id(req.params.comment_id);
+            commentToUpdate.content = reg.body.content;
+            commentToUpdate.likes  = reg.body.likes;
+
+            classroom.save();
+            res.json(commentToUpdate);
+        }
+    });
 }
 
 function destroy(req, res){
