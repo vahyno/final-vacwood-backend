@@ -40,12 +40,13 @@ app.delete('/api/classrooms/:clasroom_id', classroomsController.destroy);
 
 
 //Comment Routes
+app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
 app.post('/api/classrooms/:classroom_id/comments', commentsController.create);
-// app.get('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.show);
-// app.put('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.update);
-// app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
-// app.delete('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.destroy);
+app.get('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.show);
+app.put('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.update);
+app.delete('/api/classrooms/:classroom_id/comments/:comment_id', commentsController.destroy);
 
+//Response on Comment Routes
 
 // server start
 let port = process.env.PORT || 3001;
