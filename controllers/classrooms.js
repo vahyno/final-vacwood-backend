@@ -14,7 +14,9 @@ function index (req, res){
 }
 
 function create (req, res){
-    Classroom.create(reg.body, function(err, newClassroom){
+    // Typo was causing a problem for create (req.body, not reg.body).
+    // Classroom.create(reg.body, function(err, newClassroom){
+    Classroom.create(req.body, function(err, newClassroom){
       if (err) {
         console.log('New Classroom err: ', err);
         res.send(err);
