@@ -13,13 +13,13 @@ var comments = [{
 }];
 
 var seedClassroom = [{
-    title: 'Kindergarten classroom',
+    title: 'Kindergarten',
     teacher: 'Ms. Quivers',
     info: 'room #100 located in the east wing of the building',
     image_url: `https://kindercraze.com/wp-content/uploads/2015/10/vintage-carnival-9.jpg`,
     comments: [comments[2]],
 },{
-    title: 'Kindergarten classroom',
+    title: 'Kindergarten',
     teacher: 'Mr. Norris',
     info: 'room #101 located in the east wing of the building',
     image_url: `http://4.bp.blogspot.com/_-FEgefSk_mQ/TFeSdEZeJfI/AAAAAAAAAZc/N6SY6VUQX4s/s400/IMG_9467.JPG`,
