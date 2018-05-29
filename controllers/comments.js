@@ -50,19 +50,23 @@ function show(req, res){
     });
 }
 
-function update(req, res){
-    Classroom.findById(req.params.classroom_id, function(err, classroom){
-        if (err) {
-            console.log(err);
-            res.send(err);
-        } else {
-            var commentToUpdate = classroom.comments.id(req.params.comment_id);
-            commentToUpdate.content = req.body.content;
-            commentToUpdate.likes  = req.body.likes;
 
-            classroom.save();
-            res.json(commentToUpdate);
-        }
+function update(req, res){
+    Comment.findById(req.params.comment_id, function(err, comment) {
+        if(err) res.send(err)
+        comment.content = req.body.content;
+        comment.save();
+        console.log(req.body.comments)
+        Classroom.findByIdAndUpdate(req.params.classroom_id,
+            {$set: req.body}, function(err, classroom){
+            if (err) {
+                console.log(err);
+                res.send(err);
+            } else {
+                commentToUpdate = req.body.commentData;
+                res.json(classroom);
+            }
+        });
     });
 }
 

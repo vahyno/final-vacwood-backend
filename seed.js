@@ -39,10 +39,10 @@ models.Comment.remove({}, function(err, res){
       models.Classroom.create([
         {
           title: 'Kindergarten',
-          teacher: 'Ms. Quivers',
-          info: 'Room #H100 located in the east wing.',
-          image_url: `https://kindercraze.com/wp-content/uploads/2015/10/vintage-carnival-9.jpg`,
-          comments: [comments[2]],
+          teacher: 'Ms. Wendy',
+          info: 'Room #H102 located in the east wing.',
+          image_url: `http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/kindergarten_primary.jpg?itok=qPWwpwls&resize=1100x619`,
+          comments: [],
         },{
             title: 'Kindergarten',
             teacher: 'Mr. Norris',
@@ -51,10 +51,11 @@ models.Comment.remove({}, function(err, res){
             comments: [comments[1], comments[0]],     
         },{
           title: 'Kindergarten',
-          teacher: 'Ms. Wendy',
-          info: 'Room #H102 located in the east wing.',
-          image_url: `http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/kindergarten_primary.jpg?itok=qPWwpwls&resize=1100x619`,
-          comments: [],     
+          teacher: 'Ms. Quivers',
+          info: 'Room #H100 located in the east wing.',
+          image_url: `https://kindercraze.com/wp-content/uploads/2015/10/vintage-carnival-9.jpg`,
+          comments: [comments[2]],
+     
         }
       ],function(err, createdClassrooms){
         if (err){

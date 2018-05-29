@@ -49,7 +49,7 @@ app.delete('/api/classrooms/:classroom_id/comments/:comment_id', commentsControl
 
 //Response on Comment Routes
 app.get('/api/classrooms/:classroom_id/comments/:comment_id/comments', replyCommentsController.show);
-app.post('/api/classrooms/:classroom_id/comments:comment_id/comments', replyCommentsController.create);
+app.post('/api/classrooms/:classroom_id/comments/:comment_id/comments', replyCommentsController.create);
 app.delete('/api/classrooms/:classroom_id/comments/:comment_id/comments/:replyComment_id', replyCommentsController.destroy);
 
 
