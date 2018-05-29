@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var CommentSchema = new Schema()
 CommentSchema.add({
 	content: String,
-    likes: Number,
+    // likes: Number,
     comments: [CommentSchema],
     created_at: {
         type: Date,

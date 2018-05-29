@@ -37,6 +37,8 @@ function create(req, res){
 }
 
 function show(req, res){
+    console.log('4444', req.params)
+    
     Comment.findById(req.params.comment_id, function(err, comment){
         if (err) {
             console.log('comment err: ', err);
