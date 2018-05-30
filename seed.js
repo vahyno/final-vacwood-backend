@@ -39,21 +39,21 @@ models.Comment.remove({}, function(err, res){
       models.Classroom.create([
         {
           title: 'Kindergarten',
-          teacher: 'Ms. Wendy',
+          teacher: 'Mr. Hein',
           info: 'Room #H102 located in the east wing.',
-          image_url: `http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/kindergarten_primary.jpg?itok=qPWwpwls&resize=1100x619`,
+          image_url: 'http://flsweb.org/wp-content/uploads/2016/04/Kindergarten-770x512.jpg',
           comments: [],
         },{
             title: 'Kindergarten',
             teacher: 'Mr. Norris',
             info: 'Room #H101 located in the east wing.',
-            image_url: `http://4.bp.blogspot.com/_-FEgefSk_mQ/TFeSdEZeJfI/AAAAAAAAAZc/N6SY6VUQX4s/s400/IMG_9467.JPG`,
+            image_url: 'http://4.bp.blogspot.com/_-FEgefSk_mQ/TFeSdEZeJfI/AAAAAAAAAZc/N6SY6VUQX4s/s400/IMG_9467.JPG',
             comments: [comments[1], comments[0]],     
         },{
           title: 'Kindergarten',
           teacher: 'Ms. Quivers',
           info: 'Room #H100 located in the east wing.',
-          image_url: `https://kindercraze.com/wp-content/uploads/2015/10/vintage-carnival-9.jpg`,
+          image_url: 'https://study.com/cimages/hub/How%20to%20Set%20Up%20Your%20Kindergarten%20Classroom%20Quickly.jpg',
           comments: [comments[2]],
      
         }
