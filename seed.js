@@ -4,7 +4,7 @@ var models = require('./models');
 var commentsData = [{
   content: 'No school on Monday.',
 }, {
-  content: 'Noel and I are going to Oakland Zoo tomorrow anyone wants to join?',
+  content: 'Noel and I are going to Oakland Zoo tomorrow, does anyone want to join?',
 }, {
   content: 'Pack lunch, fieldtrip to Tilden next Friday!!!',
 }];
