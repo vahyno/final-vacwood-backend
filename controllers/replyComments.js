@@ -14,6 +14,8 @@ function show(req, res) {
 
 function create(req, res) {
     Comment.create(req.body, function(err, replyToComment){
+        // console.log(req.body.content)
+        // console.log(replyToComment)
         if (err) {
             res.send(err);
         } else {
