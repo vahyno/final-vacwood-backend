@@ -6,7 +6,9 @@ var commentsData = [{
 }, {
   content: 'Noel and I are going to Oakland Zoo tomorrow, does anyone want to join?',
 }, {
-  content: 'Pack lunch, fieldtrip to Tilden next Friday!!!',
+  content: 'Pack lunch, fieldtrip to Tilden Park next Friday!!!',
+} , {
+  content: '"Library" is coming up on Wednesday.'
 }];
 
 
@@ -16,7 +18,7 @@ models.Comment.remove({}, function(err, res){
     console.log('Error removing comments: ',err);
     return;
   }
-  console.log('*'.repeat(150));
+  console.log('*'.repeat(100));
   console.log('Removed all comments');
 
   //Create New Comments
@@ -42,7 +44,8 @@ models.Comment.remove({}, function(err, res){
           teacher: 'Mr. Hein',
           info: 'Room #H102 located in the east wing.',
           image_url: 'http://flsweb.org/wp-content/uploads/2016/04/Kindergarten-770x512.jpg',
-          comments: [],
+          // image_url: './imgs/bus.jpg',
+          comments: [comments[3]],
         },{
             title: 'Kindergarten',
             teacher: 'Mr. Norris',
@@ -61,11 +64,11 @@ models.Comment.remove({}, function(err, res){
         if (err){
           console.log('Error creating classrooms', err);
         }
-        console.log('-'.repeat(150));
+        console.log('-'.repeat(100));
         console.log("All Classrooms:", createdClassrooms);
-        console.log('-'.repeat(150));
+        console.log('-'.repeat(100));
         console.log('Created ', createdClassrooms.length, ' classrooms.');
-        console.log('*'.repeat(150));
+        console.log('*'.repeat(100));
         process.exit();
       });
     });
