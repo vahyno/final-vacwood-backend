@@ -48,23 +48,34 @@ function show(req, res){
     });
 }
 
-
 function update(req, res){
+    console.log('update => req.body: ', req.body);
+    console.log('req.params', req.params)
     Comment.findById(req.params.comment_id, function(err, comment) {
         if(err) res.send(err)
-        comment.content = req.body.content;
+
+        comment.content = req.body.filter(cmt => cmt._id === req.params.comment_id)[0].content;
         comment.save();
-        console.log(req.body.comments)
-        Classroom.findByIdAndUpdate(req.params.classroom_id,
-            {$set: req.body}, function(err, classroom){
-            if (err) {
-                console.log(err);
-                res.send(err);
-            } else {
-                commentToUpdate = req.body.commentData;
-                res.json(classroom);
-            }
-        });
+        console.log('comment: ', comment);
+        
+        Classroom.findByIdAndUpdate(req.params.classroom_id, 
+                {$set: 
+                    { comments: req.body}//.filter(comt._id !== comment._id).concat(comment)} 
+                }, function(err, updatedClassroom) {
+                    if (err) {
+                        console.warn(err);
+                    } else {
+                        // res.json(updatedClassroom);
+                        Classroom.findById(req.params.classroom_id, function(err, classroom) {
+                            if (err) { 
+                                console.warn('Error updating comment', err);
+                                res.send(err);
+                            } else { 
+                                res.send(classroom);
+                            }
+                        })
+                    }
+        }); 
     });
 }
 

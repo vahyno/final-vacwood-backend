@@ -14,8 +14,10 @@ function show(req, res) {
 
 function create(req, res) {
     Comment.create(req.body, function(err, replyToComment){
-        // console.log(req.body.content)
-        // console.log(replyToComment)
+        // console.log('req.body.content:  ',req.body.content)
+        // console.log('replyToComment: ', replyToComment)
+        // console.log('req.params.comment_id:', req.params.comment_id)
+        // console.log('req.params.classroom_id: ',req.params)
         if (err) {
             res.send(err);
         } else {
@@ -33,7 +35,9 @@ function create(req, res) {
                             var commentToUpdate = classroom.comments.id(req.params.comment_id);
                             commentToUpdate.comments.push(replyToComment);
                             classroom.save();
-                            res.json(classroom);
+                            // res.json(classroom);
+                            res.json(replyToComment)
+                            console.log('reply created.')
                         }
                     });
                 }

@@ -27,7 +27,6 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
   res.json({
     name:"Michal",
-    githubUserName: "vahyno",
     githubLink: "https://github.com/vahyno",
   })
 });
@@ -38,7 +37,6 @@ app.post('/api/classrooms', classroomsController.create);
 app.get('/api/classrooms/:classroom_id', classroomsController.show);
 app.put('/api/classrooms/:classroom_id', classroomsController.update);
 app.delete('/api/classrooms/:classroom_id', classroomsController.destroy);
-
 
 //Comment Routes
 app.get('/api/classrooms/:classroom_id/comments', commentsController.index);
