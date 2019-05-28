@@ -43,7 +43,7 @@ models.Comment.remove({}, function(err, res){
           title: 'Kindergarten',
           teacher: 'Mr. Hein',
           info: 'Room #H102 located in the east wing.',
-          image_url: 'http://flsweb.org/wp-content/uploads/2016/04/Kindergarten-770x512.jpg',
+          image_url: 'https://www.prettyprudent.com/wp-content/uploads/2015/11/10093151/10-Things-Your-Teacher-Wants-for-the-Classroom.jpg',
           // image_url: './imgs/bus.jpg',
           comments: [comments[3]],
         },{
